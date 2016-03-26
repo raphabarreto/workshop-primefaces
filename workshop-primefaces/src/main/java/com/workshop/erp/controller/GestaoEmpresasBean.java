@@ -1,11 +1,14 @@
 package com.workshop.erp.controller;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import org.primefaces.context.RequestContext;
 
 import com.workshop.erp.model.Empresa;
 import com.workshop.erp.model.TipoEmpresa;
@@ -40,6 +43,8 @@ public class GestaoEmpresasBean implements Serializable {
 		consultar();
 
 		messages.info("Empresa salva com sucesso!");
+		
+		RequestContext.getCurrentInstance().update(Arrays.asList("frm:msgs", "frm:empresa-table"));
 	}
 
 	public void consultar() {
