@@ -25,7 +25,6 @@
 						action="#{gestaoEmpresasBean.prepararNovoCadastro}"
 						process="@this" update="empresa-dialog"
 						oncomplete="PF('edicaoEmpresaDialog').show()">
-						
 						<p:resetInput target="empresa-dialog"/>
 					</p:commandButton>
 
@@ -33,8 +32,15 @@
 						class="ui-icon ui-icon-grip-dotted-vertical" />
 					</span>
 
-					<p:commandButton icon="ui-icon-pencil" title="Editar" 
-						disabled="#{gestaoEmpresasBean.empresaSelecionada == null}" />
+					<p:commandButton icon="ui-icon-pencil" title="Editar"
+						process="@this" update="empresa-dialog"
+						oncomplete="PF('edicaoEmpresaDialog').show()" 
+						disabled="#{gestaoEmpresasBean.empresaSelecionada == null}">
+						<p:resetInput target="empresa-dialog"/>
+						
+						<f:setPropertyActionListener value="#{gestaoEmpresasBean.empresaSelecionada}"
+							target="#{gestaoEmpresasBean.empresaEdicao}"/>
+					</p:commandButton>
 
 					<p:commandButton icon="ui-icon-trash" title="Excluir" 
 						disabled="#{gestaoEmpresasBean.empresaSelecionada == null}"/>
@@ -101,7 +107,7 @@
 							
 							<p:commandButton value="Salvar" id="salvar-button" 
 								action="#{gestaoEmpresasBean.salvar}" 
-								process="empresa-dialog" update="msgs-dialog painel-dialog" 
+								process="empresa-dialog" update="msgs-dialog painel-dialog"
 								oncomplete="if (!args.validationFailed) PF('edicaoEmpresaDialog').hide()"/>
 					</h:panelGrid>
 			</p:dialog>

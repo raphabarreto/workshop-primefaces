@@ -45,7 +45,7 @@ public class GestaoEmpresasBean implements Serializable {
 
 		messages.info("Empresa salva com sucesso!");
 		
-		RequestContext.getCurrentInstance().update(Arrays.asList("frm:msgs", "frm:empresa-table"));
+		RequestContext.getCurrentInstance().update(Arrays.asList("frm:msgs", "frm:empresas-table"));
 	}
 
 	public void consultar() {
