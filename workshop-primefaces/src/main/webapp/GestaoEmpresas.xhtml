@@ -52,7 +52,10 @@
 							message="Tem certeza que deseja excluir a empresa?"/>
 					</p:commandButton>
 
-					<p:commandButton icon="ui-icon-arrowthick-1-s" title="Exportar para XLS" />
+					<p:commandButton icon="ui-icon-arrowthick-1-s" title="Exportar para XLS" 
+							ajax="false" immediate="true">
+						<p:dataExporter type="xls" target="empresas-table" fileName="empresas"/>
+					</p:commandButton>
 				</f:facet>
 			</p:toolbar>
 
