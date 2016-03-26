@@ -33,6 +33,7 @@ public class GestaoEmpresasBean implements Serializable {
 
 	private List<Empresa> todasEmpresas;
 	private Empresa empresaEdicao = new Empresa();
+	private Empresa empresaSelecionada;
 
 	public void prepararNovoCadastro() {
 		empresaEdicao = new Empresa();
@@ -67,4 +68,11 @@ public class GestaoEmpresasBean implements Serializable {
 		this.empresaEdicao = empresaEdicao;
 	}
 
+	public Empresa getEmpresaSelecionada() {
+		return empresaSelecionada;
+	}
+
+	public void setEmpresaSelecionada(Empresa empresaSelecionada) {
+		this.empresaSelecionada = empresaSelecionada;
+	}
 }
