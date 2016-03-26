@@ -13,10 +13,12 @@
 		<f:viewAction action="#{gestaoEmpresasBean.consultar}" />
 	</f:metadata>
 
+	<h:form id="frm">
+	
 	<p:dataTable value="#{gestaoEmpresasBean.todasEmpresas}" var="empresa"
 		emptyMessage="Nenhuma empresas cadastrada" rows="10" paginator="true" paginatorPosition="bottom">
-		<p:column headerText="Razão Social">
-			<h:outputText value="#{empresa.razaoSocial}" />
+		<p:column headerText="Razão Social" sortBy="#{empresa.razaoSocial}">
+			<h:outputText value="#{empresa.razaoSocial}"/>
 		</p:column>
 		<p:column headerText="Nome Fantasia">
 			<h:outputText value="#{empresa.nomeFantasia}" width="250"/>
@@ -25,6 +27,6 @@
 			<h:outputText value="#{empresa.cnpj}" width="160"/>
 		</p:column>
 	</p:dataTable>
-
+	</h:form>
 </h:body>
 </html>
