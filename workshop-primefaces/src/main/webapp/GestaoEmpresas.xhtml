@@ -76,10 +76,9 @@
 								mask="99.999.999/9999-99"/>
 							
 							<p:outputLabel value="Data de fundação" for="data-fundacao"/>
-							<p:inputText id="data-fundacao" size="10" maxlength="10"
-								value="#{gestaoEmpresasBean.empresaEdicao.dataFundacao}">
-									<f:convertDateTime pattern="dd/MM/yyyy"/>
-							</p:inputText>
+							<p:calendar id="data-fundacao" size="10" maxlength="10"
+								value="#{gestaoEmpresasBean.empresaEdicao.dataFundacao}"
+								pattern="dd/MM/yyyy" mask="99/99/9999"/>
 							
 							<p:outputLabel value="Tipo" for="tipo"/>
 							<p:selectOneMenu id="tipo" value="#{gestaoEmpresasBean.empresaEdicao.tipo}">
